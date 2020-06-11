@@ -1,0 +1,33 @@
+html {
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+    font-size: 16px;
+}
+body {
+    box-sizing: border-box;
+}
+main {
+    background: rgb(100, 148, 95);
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    color: black;
+}
+footer {
+    background: rgb(49, 49, 54);
+    padding-top: 0.5em;
+    padding-bottom: 0.5em; 
+    color: white;
+}
+footer p {
+    padding: 0.5em;
+    color: white;
+}
+#footer {
+    margin: 0;
+}
+h1 {
+    text-align: center;
+}
+ul {
+    list-style-type: none;
+    position: right;
+}

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Javascript DOM Manipulation</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <style>
+      td,
+      th {
+        text-align: right;
+      }
+
+      .non-numeric {
+        text-align: left;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <div class="container">
+        <div class="d-block d-sm-none">
+          <nav class="navbar fixed-top navbar-dark bg-dark">
+            <a class="navbar-brand" href="index.html">Home</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+              <div class="navbar-nav">
+                <a class="nav-item nav-link" href="about.html">About Us</a>
+                <a class="nav-item nav-link" href="recommendations.html">Recommendations</a>
+                <a class="nav-item nav-link" href="books.html">Search Books</a>
+              </div>
+          </nav>
+        </div>
+        <div class="d-none d-sm-block">
+          <nav class="navbar fixed-top navbar-dark bg-dark">
+              <a class="navbar-brand" href="index.html">Home</a>
+                <div class="navbar-nav justify-content-end flex-row">
+                  <a class="nav-item nav-link mr-2" href="about.html">About Us</a>
+                  <a class="nav-item nav-link" href="recommendations.html">Recommendations</a>
+                  <a class="nav-item nav-link ml-2" href="books.html">Search Books</a>
+                </div>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <main class="container">
+      <div class="row py-5" style="margin:5em">
+        <div class="col">
+          <form>
+            <div class="form-group">
+              <label for="book-filter">Looking for a recommendation?  Search our 10K books.</label>
+              <input
+                type="text"
+                class="form-control"
+                id="book-filter"
+                placeholder="Filter books"
+              />
+            </div>
+          </form>
+
+          <table class="table table-striped table-hover books" width="100%">
+            <thead class="thead-dark">
+              <tr>
+                <th scope="col" class="non-numeric">Title</th>
+                <th scope="col">Authors</th>
+                <th scope="col">Average Rating</th>
+                <th scope="col">Image</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </div>
+    </main>
+
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+    <script src="js/BOOKS.js"></script>
+    <script src="js/app.js"></script>
+    <script>
+      // Only works with Google Chrome
+      // set value in "Enter your name" to "" on every page reload 
+      var query = document.querySelector(".form-control");
+      query.textContent = "";
+
+      BOOKS.sort (function (record1,record2) {
+        return record2.average_rating - record1.average_rating
+      });
+      renderBooks(BOOKS);
+
+      query = document.querySelector(".form-control");
+      query.addEventListener("input", function () {
+        var Books_Temp = BOOKS.filter(function (temp) {
+          return temp.title.toLowerCase().indexOf(query.value.toLowerCase()) !== -1;
+        });
+// Clear display before writting filter entries in display otherwise they just show up at the end
+// with the original entries
+        $("tbody").children().remove();
+        renderBooks(Books_Temp);
+      });
+    </script>
+  </body>
+</html>

@@ -1,34 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="author" content="Alyssa Gates">
     <meta name="description" content="put description here">
     <meta name="keywords" content="list keywords here">
-    <title>insert title here </title>
+    <link rel="stylesheet" href="css/styles.css">
+
+    <title>The Hobbit Hole</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 </head>
+
 <body>
-    <h1>Welcome to The Hobbit Hole Books & Beverages</h1>
-    <p>created by Alyssa Gates</p>
-    <main>
-        <img src="img/child reading.jpg" alt="picture of young child reading in a forest">
-            
-        <h2>Top Ten Reads</h2>
+    <header>
+        <div class="container">
+          <div class="d-block d-sm-none">
+            <nav class="navbar fixed-top navbar-dark bg-dark">
+              <a class="navbar-brand" href="index.html">Home</a>
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                  <a class="nav-item nav-link" href="about.html">About Us</a>
+                  <a class="nav-item nav-link" href="recommendations.html">Recommendations</a>
+                  <a class="nav-item nav-link" href="books.html">Search Books</a>
+                </div>
+            </nav>
+          </div>
+          <div class="d-none d-sm-block">
+            <nav class="navbar fixed-top navbar-dark bg-dark">
+                <a class="navbar-brand" href="index.html">Home</a>
+                  <div class="navbar-nav justify-content-end flex-row">
+                    <a class="nav-item nav-link mr-2" href="about.html">About Us</a>
+                    <a class="nav-item nav-link" href="recommendations.html">Recommendations</a>
+                    <a class="nav-item nav-link ml-2" href="books.html">Search Books</a>
+                  </div>
+            </nav>
+          </div>
+        </div>
+      </header>
+
+    
+    <main style="max-height: 1700px";>
+      <div class="container" style="margin:5em">
+        <h1>Welcome to The Hobbit Hole</h1>
+        <img src="img/child reading.jpg" alt="picture of young child reading in a forest" height="375px" style="float: left; margin: 3px 12px 3px 0px">
+        <h4>Looking for a book recommendation or want to browse our collection of 10,000 books? The Hobbit Hole is the place to discover your next great adventure!</h4>
+        <h5>Top Ten Reads</h5>
         <ul>
-            <li><em>Caraval</em> by Stephanie Garber</li>
-            <li><em>The Problem of Pain</em> by C.S. Lewis</li>
-            <li><em>Night</em> by Elie Wiesel</li>
-            <li><em>Here I Stand: A Life of Martin Luther</em> by Roland H. Bainton</li>
-            <li><em>The Little Paris Bookshop</em> by Nina George</li>
-            <li><em>Outlaw</em> by Angus Donald</li>
-            <li><em>The Book Thief</em> by Markus Zusak</li>
-            <li><em>Becoming Jane Austen</em> by John Spence</li>
-            <li><em>And It Was Good</em> by Madeleine L'Engle</li>
-            <li><em>Heartless</em> by Marissa Meyer</li>
-            <li>Bonus: <em>The Thief</em> by Megan Whalen Turner</li>
+          <li><em>Caraval by Stephanie Garber</em></li>
+          <li><em>The Problem of Pain by C.S. Lewis</em></li>
+          <li><em>Night by Elie Wiesel</em></li>
+          <li><em>Here I Stand: A Life of Martin Luther by Roland Bainton</em></li>
+          <li><em>The Little Paris Bookshop by Nina George</em></li>
+          <li><em>Outlaw by Angus Donald</em></li>
+          <li><em>Pride by Ibi Zoboi</em></li>
+          <li><em>The Book Thief by Markus Zusak</em></li>
+          <li><em>Becoming Jane Austen by Jon Spence</em></li>
+          <li><em>And It Was Good by Madeleine L'Engle</em></li>
         </ul>
+      </div>
     </main>
 
-    <footer>Page Created by <a href="https://github.com/argates">Alyssa Gates</a></footer> 
+    <footer id="footer">
+        <div class="container" id="footer">
+            <p>Page Created by
+                <a href="https://github.com/argates">Alyssa Gates</a>
+            </p>
+        </div>
+    </footer>
+    
+  <!-- jQuery library (required by Bootstrap's JavaScript library) -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+
+  <!-- PopperJS library (required by Bootstrap's JavaScript library) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+
+  <!-- Bootstrap v4.3.1 JavaScript library -->
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
 </html>
